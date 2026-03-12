@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { RouterProvider, createBrowserRouter } from "react-router";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router";
 import App from "../App";
 import LoadingPage from "../components/Loading/LoadingPage";
 
@@ -12,17 +12,23 @@ const SitePages = React.lazy(() => import("../pages/SitePages/SitePages"));
 const NotFound = React.lazy(() => import("../pages/NotFound/NotFound"));
 const ErrorPage = React.lazy(() => import("../pages/ErrorPage/ErrorPage"));
 
+const lang = localStorage.getItem("lang") || "ar";
+
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Navigate to={`/${lang}`} replace />,
+  },
+  {
+    path: "/:lang",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Home /> },
-      { path: "/about", element: <About /> },
-      { path: "/contact", element: <ContactUS /> },
+      { path: "about", element: <About /> },
+      { path: "contact", element: <ContactUS /> },
 
-      { path: "/pages/:slug", element: <SitePages /> },
+      { path: "pages/:slug", element: <SitePages /> },
 
       { path: "*", element: <NotFound /> },
     ],

@@ -1,49 +1,38 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { changeLanguage } from "@/store/languageSlice/languageSlice";
 import LoadingModal from "@/components/Loading/LoadingModal";
 import { AiOutlineGlobal } from "react-icons/ai";
+import { useLocation, useNavigate, useParams } from "react-router";
 
 const LanguageSwitcher = () => {
-  const dispatch = useDispatch();
-  const { lang } = useSelector((state) => state.language);
+  const { lang } = useParams(); // 👈 اللغة من الرابط
 
-  const [openLoading, setOpenLoading] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  useEffect(() => {
-    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-  }, [lang]);
+  const toggleLanguage = () => {
+    const newLang = lang === "ar" ? "en" : "ar";
 
-  const handleToggle = () => {
-    dispatch(changeLanguage(lang === "ar" ? "en" : "ar"));
-    setOpenLoading(true);
+    const newPath = location.pathname.replace(/^\/(ar|en)/, `/${newLang}`);
+
+    navigate(newPath);
   };
 
   return (
     <>
       <button
-        onClick={handleToggle}
+        onClick={toggleLanguage}
         className="flex items-center gap-1 text-white border px-2 py-1 rounded-md cursor-pointer 
         hover:text-secondary hover:border-secondary transition-colors duration-300"
       >
         <span className="font-medium text-sm sm:hidden">
           {lang === "en" ? "AR" : "EN"}
         </span>
-        <span
-          style={{
-            fontFamily:
-              lang === "en"
-                ? "Noto Sans Arabic, sans-serif"
-                : "Assistant, sans-serif",
-          }}
-          className="font-medium text-sm hidden sm:inline"
-        >
+        <span className="font-medium text-sm hidden sm:inline">
           {lang === "en" ? "العربية" : "English"}
         </span>
         <AiOutlineGlobal />
       </button>
 
-      {openLoading && <LoadingModal />}
+      {/* {openLoading && <LoadingModal />} */}
     </>
   );
 };

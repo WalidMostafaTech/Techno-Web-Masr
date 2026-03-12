@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { Toaster } from "@/components/ui/sonner";
 import ScrollToTopBtn from "./components/behaviors/ScrollToTopBtn";
 import ModalManager from "./components/modals/ModalManager";
+import LanguageHandler from "./components/behaviors/LanguageHandler";
 
 function App() {
   const { pathname } = useLocation();
@@ -25,6 +26,8 @@ function App() {
 
   return (
     <main>
+      <LanguageHandler />
+
       <Header />
 
       <div className="min-h-dvh">
