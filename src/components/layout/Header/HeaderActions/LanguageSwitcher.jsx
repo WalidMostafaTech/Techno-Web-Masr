@@ -1,5 +1,5 @@
 import LoadingModal from "@/components/Loading/LoadingModal";
-import { AiOutlineGlobal } from "react-icons/ai";
+import { IoLanguage } from "react-icons/io5";
 import { useLocation, useNavigate, useParams } from "react-router";
 
 const LanguageSwitcher = () => {
@@ -14,6 +14,7 @@ const LanguageSwitcher = () => {
     const newPath = location.pathname.replace(/^\/(ar|en)/, `/${newLang}`);
 
     navigate(newPath);
+
   };
 
   return (
@@ -29,7 +30,7 @@ const LanguageSwitcher = () => {
         <span className="font-medium text-sm hidden sm:inline">
           {lang === "en" ? "العربية" : "English"}
         </span>
-        <AiOutlineGlobal />
+        <IoLanguage />
       </button>
 
       {/* {openLoading && <LoadingModal />} */}

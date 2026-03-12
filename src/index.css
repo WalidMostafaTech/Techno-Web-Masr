@@ -9,7 +9,7 @@
 @utility container {
   margin-inline: auto;
   padding-inline: 1rem;
-  max-width: 1200px;
+  max-width: 1024px;
 }
 
 /* fix hover in mobile */
@@ -68,15 +68,15 @@ input::-webkit-inner-spin-button {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   /* --foreground: oklch(0.145 0 0); */
-  --foreground: #45556C;
+  --foreground: #45556c;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #02332E;
-  /* --primary-foreground: oklch(0.985 0 0); */
-  --primary-foreground: #f3f7f5;
-  --secondary: #C9ED8C;
+  --primary: #02332e;
+  --primary-foreground: oklch(0.985 0 0);
+  /* --primary-foreground: #056f64; */
+  --secondary: #c9ed8c;
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
@@ -232,7 +232,7 @@ input::-webkit-inner-spin-button {
   .main_slider_btn {
     @apply w-8 h-8 rounded-full cursor-pointer
     flex items-center justify-center 
-    bg-primary-foreground text-primary rtl:rotate-180
+    bg-secondary text-primary rtl:rotate-180
     hover:scale-110 transition-all duration-200;
 
     &.layout {
@@ -248,7 +248,7 @@ input::-webkit-inner-spin-button {
     }
 
     &:disabled {
-      @apply opacity-40 cursor-not-allowed;
+      @apply opacity-40 cursor-not-allowed hover:scale-100;
     }
   }
 
