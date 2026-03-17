@@ -1,11 +1,11 @@
-import Hero from "./sections/Hero";
-import StatisticsSection from "./sections/StatisticsSection";
-import WhoWeAre from "@/components/commonSections/WhoWeAre";
-import ServicesSection from "./sections/ServicesSection";
-import WhyChooseUs from "@/components/commonSections/WhyChooseUs";
-import PreviousWorkSection from "./sections/PreviousWorkSection";
-import PartnersSection from "./sections/PartnersSection";
-import TestimonialsSection from "@/components/commonSections/TestimonialsSection";
+import Hero from "@/components/sections/Hero";
+import StatisticsSection from "@/components/sections/StatisticsSection";
+import WhoWeAre from "@/components/sections/WhoWeAre";
+import ServicesSection from "@/components/sections/ServicesSection";
+import WhyChooseUs from "@/components/sections/WhyChooseUs";
+import PreviousWorkSection from "@/components/sections/PreviousWorkSection";
+import PartnersSection from "@/components/sections/PartnersSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
 
 const Home = () => {
   return (

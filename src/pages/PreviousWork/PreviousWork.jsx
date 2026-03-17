@@ -1,6 +1,7 @@
 import image from "@/assets/images/bg-img.png";
 import PreviousWorkCard from "@/components/cards/PreviousWorkCard";
-import PageBanner from "@/components/commonSections/PageBanner";
+import PageBanner from "@/components/sections/PageBanner";
+import PreviousWorkListSkeleton from "@/components/skeletons/PreviousWorkListSkeleton";
 import { useState } from "react";
 
 const PreviousWork = () => {
@@ -53,12 +54,15 @@ const PreviousWork = () => {
             );
           })}
         </ul>
-
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {list.map((item) => (
-            <PreviousWorkCard key={item.id} item={item} />
-          ))}
-        </ul>
+        {true ? (
+          <PreviousWorkListSkeleton />
+        ) : (
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {list.map((item) => (
+              <PreviousWorkCard key={item.id} item={item} />
+            ))}
+          </ul>
+        )}
       </section>
     </main>
   );

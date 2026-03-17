@@ -11,7 +11,6 @@ import { FaXTwitter } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { Link } from "react-router";
-import FooterSkeleton from "@/components/Loading/SkeletonLoading/FooterSkeleton";
 import useNavigationLinks from "@/hooks/useNavigationLinks";
 
 const Footer = () => {

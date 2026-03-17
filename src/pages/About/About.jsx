@@ -1,10 +1,10 @@
-import PageBanner from "@/components/commonSections/PageBanner";
-import WhoWeAre from "@/components/commonSections/WhoWeAre";
-import StartWithUsBanner from "@/components/commonSections/StartWithUsBanner";
-import Faqs from "@/components/commonSections/Faqs";
-import VisionAndMission from "./sections/VisionAndMission";
-import WhyChooseUs from "@/components/commonSections/WhyChooseUs";
-import TestimonialsSection from "@/components/commonSections/TestimonialsSection";
+import PageBanner from "@/components/sections/PageBanner";
+import WhoWeAre from "@/components/sections/WhoWeAre";
+import StartWithUsBanner from "@/components/sections/StartWithUsBanner";
+import Faqs from "@/components/sections/Faqs";
+import VisionAndMission from "@/components/sections/VisionAndMission";
+import WhyChooseUs from "@/components/sections/WhyChooseUs";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
 
 const About = () => {
   return (

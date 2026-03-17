@@ -1,4 +1,4 @@
-import PageBanner from "@/components/commonSections/PageBanner";
+import PageBanner from "@/components/sections/PageBanner";
 import image from "@/assets/images/bg-img.png";
 
 const ProductsDetails = () => {

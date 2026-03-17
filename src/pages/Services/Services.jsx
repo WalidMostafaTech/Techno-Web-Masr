@@ -1,6 +1,7 @@
-import PageBanner from "@/components/commonSections/PageBanner";
+import PageBanner from "@/components/sections/PageBanner";
 import image from "@/assets/images/bg-img.png";
 import ServiceCard from "@/components/cards/ServiceCard";
+import ServiceListSkeleton from "@/components/skeletons/ServiceListSkeleton";
 
 const Services = () => {
   const list = Array.from({ length: 8 }).map((_, i) => ({
@@ -16,11 +17,15 @@ const Services = () => {
       <PageBanner title={"خدماتنا"} />
 
       <section className="container pagePadding">
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {list.map((service) => (
-            <ServiceCard key={service.id} service={service} />
-          ))}
-        </ul>
+        {true ? (
+          <ServiceListSkeleton />
+        ) : (
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {list.map((service) => (
+              <ServiceCard key={service.id} service={service} />
+            ))}
+          </ul>
+        )}
       </section>
     </main>
   );

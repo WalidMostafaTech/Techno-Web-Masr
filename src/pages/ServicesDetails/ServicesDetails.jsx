@@ -1,15 +1,15 @@
-import ImagesSliderSection from "@/components/commonSections/ImagesSliderSection";
-import PageBanner from "@/components/commonSections/PageBanner";
-import PageBannerWithImg from "@/components/commonSections/PageBannerWithImg";
-import VideoBanner from "@/components/commonSections/VideoBanner";
-import TextAndImage from "@/components/commonSections/TextAndImage";
-import MobileAndSteps from "@/components/commonSections/MobileAndSteps";
-import MobileInCenter from "@/components/commonSections/MobileInCenter";
-import TitleAndSteps from "@/components/commonSections/TitleAndSteps";
-import TechnologySection from "@/components/commonSections/TechnologySection";
-import TechnoMasrTextBanner from "@/components/commonSections/TechnoMasrTextBanner";
+import ImagesSliderSection from "@/components/sections/ImagesSliderSection";
+import PageBanner from "@/components/sections/PageBanner";
+import PageBannerWithImg from "@/components/sections/PageBannerWithImg";
+import VideoBanner from "@/components/sections/VideoBanner";
+import TextAndImage from "@/components/sections/TextAndImage";
+import MobileAndSteps from "@/components/sections/MobileAndSteps";
+import MobileInCenter from "@/components/sections/MobileInCenter";
+import TitleAndSteps from "@/components/sections/TitleAndSteps";
+import TechnologySection from "@/components/sections/TechnologySection";
+import TechnoMasrTextBanner from "@/components/sections/TechnoMasrTextBanner";
 import image from "@/assets/images/bg-img.png";
-import WhyChooseUs from "@/components/commonSections/WhyChooseUs";
+import WhyChooseUs from "@/components/sections/WhyChooseUs";
 
 const ServicesDetails = () => {
   return (

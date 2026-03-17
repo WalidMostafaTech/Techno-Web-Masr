@@ -1,0 +1,47 @@
+import bgImg from "@/assets/images/bg-img.png";
+// import pcImg from "@/assets/images/pc-img.png";
+import pcImg from "@/assets/images/mobiles-img.png";
+import { Button } from "../ui/button";
+import { HiArrowNarrowLeft } from "react-icons/hi";
+import PageBannerWithImgSkeleton from "../skeletons/PageBannerWithImgSkeleton";
+
+const PageBannerWithImg = () => {
+  const loading = true;
+  if (loading) return <PageBannerWithImgSkeleton />;
+  return (
+    <section
+      className="bg-center bg-cover w-full h-screen md:h-[80vh] content-center pt-24 pb-16 md:mb-14"
+      style={{ backgroundImage: `url(${bgImg})` }}
+    >
+      <div className="container w-full h-full flex flex-col justify-center md:flex-row items-center gap-10">
+        <div className="w-full md:w-1/2 h-62.5 md:h-full">
+          <img
+            src={pcImg}
+            alt=""
+            className="w-[90%] sm:w-[60%] md:w-full h-full object-contain mx-auto md:translate-y-[35%] drop-shadow-xl"
+          />
+        </div>
+
+        <div className="w-full md:w-1/2 flex flex-col gap-2 items-center md:items-start text-center md:text-start capitalize">
+          <h1 className="text-3xl lg:text-4xl font-medium text-white">
+            خدمة تطوير المنتجات
+          </h1>
+
+          <p className="text-white/80 text-sm">
+            نحن في تكنو ويب مصر نصمم ونطور منصات وتطبيقات ذكية تساعد الشركات علي
+            النمو والتفوق في التخصص الخاص بهم من خلال التطبيق او الموقع نحن في
+            تكنو ويب مصر نصمم ونطور منصات وتطبيقات ذكية تساعد الشركات علي النمو
+            والتفوق في التخصص الخاص بهم من خلال التطبيق او الموقع
+          </p>
+
+          <Button variant="secondary" className="mt-6 group">
+            اطلب الخدمة الان
+            <HiArrowNarrowLeft className="ltr:rotate-180 group-hover:-translate-x-1 ltr:group-hover:translate-x-1 transition-all duration-300" />
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PageBannerWithImg;

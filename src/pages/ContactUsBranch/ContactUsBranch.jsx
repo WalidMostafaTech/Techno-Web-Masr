@@ -1,4 +1,4 @@
-import PageBanner from "@/components/commonSections/PageBanner";
+import PageBanner from "@/components/sections/PageBanner";
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { SlLocationPin } from "react-icons/sl";
