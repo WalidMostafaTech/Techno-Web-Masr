@@ -23,6 +23,7 @@ import WhyChooseUsBanner from "./WhyChooseUsBanner";
 import SectionTitle from "../common/SectionTitle";
 import TestimonialsSection from "./TestimonialsSection";
 import Faqs from "./Faqs";
+import GallerySection from "./GallerySection";
 
 const BlocksRender = ({ blocks }) => {
   useEffect(() => {
@@ -145,7 +146,7 @@ const BlocksRender = ({ blocks }) => {
             )}
             {/* 'page_banner س', 'page_banner' */}
             {block.type === "page_banner" && (
-              <PageBanner title={"خدماتنا"} block={block} />
+              <PageBanner  block={block} />
             )}
             {/* 'سلايدر الخدمات في الرئيسيه', 'services_slider' */}
             {block.type === "services_slider" && (
