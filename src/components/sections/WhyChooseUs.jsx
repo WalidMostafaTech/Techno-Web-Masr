@@ -12,23 +12,23 @@ const WhyChooseUs = ({ block, loading }) => {
 
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute top-1/2 inset-s-0 -translate-y-1/2 -z-10 w-[80%] h-full bg-secondary/20 rounded-full blur-[120px]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[40%] aspect-square bg-secondary/30 rounded-full blur-[100px]" />
 
-      <img
-        loading="lazy"
-        src={Union}
-        alt="Decorative background"
-        className="absolute top-0 inset-e-10 opacity-60 w-26 -z-10"
-      />
+      <div className="container sectionPadding relative">
+        <img
+          loading="lazy"
+          src={Union}
+          alt="Decorative background"
+          className="absolute top-0 inset-e-0 opacity-60 w-26 -z-10"
+        />
 
-      <img
-        loading="lazy"
-        src={Union}
-        alt="Decorative background"
-        className="absolute bottom-0 inset-s-10 opacity-60 w-26 -z-10"
-      />
+        <img
+          loading="lazy"
+          src={Union}
+          alt="Decorative background"
+          className="absolute bottom-0 inset-s-0 opacity-60 w-26 -z-10"
+        />
 
-      <div className="container sectionPadding">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-16 place-items-center">
           <motion.div
             className="flex flex-col gap-4 lg:gap-6"
@@ -37,13 +37,9 @@ const WhyChooseUs = ({ block, loading }) => {
             viewport={{ once: true }}
             variants={fadeUp}
           >
-            <h3 className="text-2xl font-semibold text-black">
-              {block.title}
-            </h3>
+            <h3 className="text-2xl font-semibold text-black">{block.title}</h3>
 
-            <p className="text-foreground font-medium">
-              {block.description}
-            </p>
+            <p className="text-foreground font-medium">{block.description}</p>
 
             <motion.ul
               className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6"
@@ -75,9 +71,7 @@ const WhyChooseUs = ({ block, loading }) => {
                     className="w-8 h-8"
                   />
                   <h2 className="font-semibold">{item.title}</h2>
-                  <p className="text-xs">
-                    {item.description}
-                  </p>
+                  <p className="text-xs">{item.description}</p>
                 </motion.li>
               ))}
             </motion.ul>

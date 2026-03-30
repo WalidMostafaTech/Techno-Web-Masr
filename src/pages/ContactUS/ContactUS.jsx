@@ -51,9 +51,21 @@ const ContactUS = () => {
         },
       ],
       social: [
-        { id: 1, link: "/", icon: <FaInstagram /> },
-        { id: 2, link: "/", icon: <FaLinkedinIn /> },
-        { id: 3, link: "/", icon: <FaXTwitter /> },
+        {
+          id: 1,
+          link: contactData?.socialLinks?.footer_instagram,
+          icon: <FaInstagram />,
+        },
+        {
+          id: 2,
+          link: contactData?.socialLinks?.footer_linkedin,
+          icon: <FaLinkedinIn />,
+        },
+        {
+          id: 3,
+          link: contactData?.socialLinks?.footer_x,
+          icon: <FaXTwitter />,
+        },
       ],
     })) || [];
 
@@ -136,6 +148,22 @@ const ContactUS = () => {
                     </li>
                   ))}
                 </ul>
+
+                <ul className="flex gap-4 pt-4 border-t">
+                  {item.social.map((social) => (
+                    <li key={social.id}>
+                      <a
+                        href={social.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-10 aspect-square grid place-items-center
+                      bg-gray-100 text-gray-500 text-lg rounded-full border shadow"
+                      >
+                        {social.icon}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
@@ -146,21 +174,3 @@ const ContactUS = () => {
 };
 
 export default ContactUS;
-
-{
-  /* <ul className="flex gap-4">
-                  {item.social.map((social) => (
-                    <li key={social.id}>
-                      <a
-                        href={social.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="w-8 aspect-square grid place-items-center
-                    bg-gray-100 text-primary rounded-full border shadow"
-                      >
-                        {social.icon}
-                      </a>
-                    </li>
-                  ))}
-                </ul> */
-}

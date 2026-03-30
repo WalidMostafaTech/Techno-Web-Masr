@@ -327,3 +327,60 @@ input::-webkit-inner-spin-button {
     opacity: 1;
   }
 }
+
+/* lightbox-swiper */
+.lightbox-swiper .swiper-button-next,
+.lightbox-swiper .swiper-button-prev {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.2s;
+
+  /* ده المهم - بيخلي الـ after يتمركز صح */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-swiper .swiper-button-next:hover,
+.lightbox-swiper .swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.lightbox-swiper .swiper-button-next svg,
+.lightbox-swiper .swiper-button-prev svg {
+  color: white;
+  width: 14px;
+
+  /* ده اللي بيمنع الـ after يكبر عن الـ div */
+  line-height: 1;
+  display: block;
+}
+
+/* إزاحة للخارج */
+.lightbox-swiper .swiper-button-next {
+  inset-inline-start: -16px;
+}
+.lightbox-swiper .swiper-button-prev {
+  inset-inline-end: -16px;
+}
+
+/* Pagination fix */
+.lightbox-swiper .swiper-pagination {
+  bottom: -28px;
+}
+
+.lightbox-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+}
+
+.lightbox-swiper .swiper-pagination-bullet-active {
+  background: white;
+  transform: scale(1.3);
+}

@@ -69,7 +69,7 @@ const Faqs = ({ block, loading, imageRight, callApi = false }) => {
       className="bg-center bg-cover relative"
       style={{ backgroundImage: `url(${block.bg_image_url || image})` }}
     >
-      <div className="absolute inset-0 bg-gray-100/50" />
+      <div className="absolute inset-0 bg-gray-100/40" />
 
       <div className="container sectionPadding relative z-10">
         {/* 🔥 Title Animation */}
@@ -102,11 +102,11 @@ const Faqs = ({ block, loading, imageRight, callApi = false }) => {
                     value={`item-${item.id}`}
                     className="bg-gray-200 text-black rounded-lg transition hover:shadow-md"
                   >
-                    <AccordionTrigger className="p-2 py-4 font-medium text-lg cursor-pointer">
+                    <AccordionTrigger className="p-4 font-medium text-lg cursor-pointer">
                       {item.title || item.question}
                     </AccordionTrigger>
 
-                    <AccordionContent className="p-2 font-medium">
+                    <AccordionContent className="px-4 font-medium">
                       {item.description || item.answer}
                     </AccordionContent>
                   </AccordionItem>

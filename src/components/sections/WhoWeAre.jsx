@@ -18,23 +18,23 @@ const WhoWeAre = ({ block, loading }) => {
 
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute top-1/2 inset-s-0 -translate-y-1/2 -z-10 w-[80%] h-full bg-secondary/20 rounded-full blur-[120px]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[40%] aspect-square bg-secondary/30 rounded-full blur-[100px]" />
 
-      <img
-        loading="lazy"
-        src={Union}
-        alt="Decorative background"
-        className="absolute bottom-0 inset-e-10 opacity-60 w-26 -z-10"
-      />
+      <div className="container sectionPadding relative">
+        <img
+          loading="lazy"
+          src={Union}
+          alt="Decorative background"
+          className="absolute bottom-20 inset-e-10 opacity-60 w-26 z-10"
+        />
 
-      <img
-        loading="lazy"
-        src={wIcon}
-        alt="Decorative background"
-        className="absolute top-10 inset-s-10 w-1/5 -z-10"
-      />
+        <img
+          loading="lazy"
+          src={wIcon}
+          alt="Decorative background"
+          className="absolute top-32 inset-s-0 w-1/5 -z-10"
+        />
 
-      <div className="container sectionPadding">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -47,24 +47,27 @@ const WhoWeAre = ({ block, loading }) => {
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-12">
           <motion.div
-            className="col-span-1 md:col-span-2 aspect-12/9 md:aspect-11/12 overflow-hidden rounded-2xl shadow"
+            className="col-span-1 lg:col-span-2 h-full overflow-hidden rounded-2xl shadow"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={fadeUp}
           >
-            <img
-              loading="lazy"
-              src={block.image_url}
-              alt=""
-              className="w-full h-full object-cover"
-            />
+            {block?.video_file ? (
+              <VideoBlock src={block?.video_file} />
+            ) : (
+              <img
+                src={block.image_url}
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            )}
           </motion.div>
 
           <motion.div
-            className="flex flex-col gap-4 lg:gap-6 md:col-span-3"
+            className="flex flex-col gap-4 lg:gap-6 lg:col-span-3"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
@@ -74,7 +77,7 @@ const WhoWeAre = ({ block, loading }) => {
               {block.title}
             </h3>
 
-            <p className="text-foreground font-medium text-sm md:text-base max-w-xl">
+            <p className="text-foreground font-medium text-sm md:text-base lg:max-w-xl">
               {block.description}
             </p>
 
@@ -128,3 +131,38 @@ const WhoWeAre = ({ block, loading }) => {
 };
 
 export default WhoWeAre;
+
+import { useRef, useState } from "react";
+import { IoPlayCircleOutline } from "react-icons/io5";
+
+const VideoBlock = ({ src }) => {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
+  return (
+    <div className="relative w-full h-full">
+      <video
+        ref={videoRef}
+        src={src}
+        className="w-full h-full object-cover"
+        controls={isPlaying}
+      />
+
+      {!isPlaying && (
+        <button
+          onClick={handlePlay}
+          className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition"
+        >
+          <IoPlayCircleOutline className="text-8xl rounded-full text-white flex items-center justify-center shadow-lg" />
+        </button>
+      )}
+    </div>
+  );
+};

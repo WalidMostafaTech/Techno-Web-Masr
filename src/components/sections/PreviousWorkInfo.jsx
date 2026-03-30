@@ -1,6 +1,6 @@
-import image from "@/assets/images/pc-img.png";
-import { FaApple, FaGooglePlay } from "react-icons/fa";
-import { RiGlobalLine } from "react-icons/ri";
+import googleIcon from "@/assets/icons/google-play-icon.png";
+import appleIcon from "@/assets/icons/apple-icon.png";
+import webIcon from "@/assets/icons/web-icon.png";
 import TitleAndDescription from "../common/TitleAndDescription";
 import { motion } from "framer-motion";
 import PreviousWorkInfoSkeleton from "../skeletons/PreviousWorkInfoSkeleton";
@@ -23,9 +23,9 @@ const PreviousWorkInfo = ({ data, loading }) => {
   ];
 
   const downloadList = [
-    { id: 1, icon: <FaApple />, link: data?.ios_url },
-    { id: 2, icon: <FaGooglePlay />, link: data?.android_url },
-    { id: 3, icon: <RiGlobalLine />, link: data?.web_url },
+    { id: 1, icon: appleIcon, link: data?.ios_url },
+    { id: 2, icon: googleIcon, link: data?.android_url },
+    { id: 3, icon: webIcon, link: data?.web_url },
   ];
 
   // 🔥 Variants
@@ -67,7 +67,7 @@ const PreviousWorkInfo = ({ data, loading }) => {
         <div className="h-28 w-full overflow-hidden mb-2 border border-transparent rounded-2xl hover:border-primary duration-300 py-2">
           <img
             loading="lazy"
-            src={image}
+            src={data?.logo}
             alt="project"
             className="w-full h-full object-contain"
           />
@@ -94,7 +94,7 @@ const PreviousWorkInfo = ({ data, loading }) => {
                 className="w-full flex items-center justify-between gap-2 text-xs font-bold"
               >
                 <p className="text-gray-400">{item.label}</p>
-                <span className="text-primary">{item.value}</span>
+                <span className="text-primary font-semibold">{item.value}</span>
               </li>
             ))}
         </motion.ul>
@@ -112,9 +112,15 @@ const PreviousWorkInfo = ({ data, loading }) => {
                 <a
                   href={item.link}
                   target="_blank"
-                  className="w-10 aspect-square flex items-center justify-center rounded-lg border text-2xl text-black hover:bg-primary hover:text-white transition-all duration-300"
+                  rel="noopener noreferrer"
+                  className="w-10 aspect-square inline-block p-2 rounded-lg border hover:scale-105 transition-all duration-300"
                 >
-                  {item.icon}
+                  <img
+                    loading="lazy"
+                    src={item.icon}
+                    alt="icon"
+                    className="w-full h-full object-contain"
+                  />
                 </a>
               </motion.li>
             ))}
