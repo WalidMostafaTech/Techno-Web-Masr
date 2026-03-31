@@ -68,7 +68,7 @@ const WhoWeAre = ({ block, loading }) => {
             {block?.video_file ? (
               <VideoBlock src={block.video_file} />
             ) : block?.video_url ? (
-              <YoutubeBlock url={block.video_url} />
+              <YoutubeBlock url={block.video_url} image={block.image_url} />
             ) : (
               <img
                 src={block.image_url}
@@ -97,14 +97,16 @@ const WhoWeAre = ({ block, loading }) => {
             <ul className="grid grid-cols-2 gap-4 md:gap-8 my-auto">
               {block?.block_items?.map((item) => (
                 <li key={item.id} className="flex flex-col gap-2 text-primary">
-                  <span className="text-lg font-bold bg-secondary/30 rounded-full w-14 h-14 flex items-center justify-center">
-                    <img
-                      loading="lazy"
-                      src={item.image_url}
-                      alt="icon"
-                      className="w-5 h-5"
-                    />
-                  </span>
+                  {item.image_url && (
+                    <span className="text-lg font-bold bg-secondary/30 rounded-full w-14 h-14 flex items-center justify-center">
+                      <img
+                        loading="lazy"
+                        src={item.image_url}
+                        alt="icon"
+                        className="w-5 h-5"
+                      />
+                    </span>
+                  )}
 
                   <h2 className="font-semibold md:text-xl">{item.title}</h2>
 
@@ -190,14 +192,17 @@ const VideoBlock = ({ src }) => {
 
 //////////////////////////////////////////////////////////
 
-const YoutubeBlock = ({ url }) => {
+const YoutubeBlock = ({ url, image }) => {
+  const thumbnail =
+    image || `https://img.youtube.com/vi/${getYoutubeId(url)}/hqdefault.jpg`;
+
   return (
     <div
       onClick={() => window.open(url, "_blank")}
       className="relative w-full h-full cursor-pointer group"
     >
       <img
-        src={`https://img.youtube.com/vi/${getYoutubeId(url)}/hqdefault.jpg`}
+        src={thumbnail}
         alt="youtube thumbnail"
         className="w-full h-full object-cover"
       />
