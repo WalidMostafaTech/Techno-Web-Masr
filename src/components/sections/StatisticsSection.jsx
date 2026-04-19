@@ -53,21 +53,25 @@ const Statistics = ({ block, loading }) => {
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-4xl font-semibold">{item.title}</span>
 
-                  <span
-                    className="text-2xl bg-secondary/20 w-10 h-10 flex items-center justify-center rounded-full
+                  {item.image_url && (
+                    <span
+                      className="text-2xl bg-secondary/20 w-10 h-10 flex items-center justify-center rounded-full
                     group-hover:bg-secondary transition-colors duration-300"
-                  >
-                    <img
-                      loading="lazy"
-                      src={item.image_url}
-                      alt=""
-                      className="w-6 h-6"
-                    />
-                  </span>
+                    >
+                      <img
+                        loading="lazy"
+                        src={item.image_url}
+                        alt=""
+                        className="w-6 h-6"
+                      />
+                    </span>
+                  )}
                 </div>
 
                 <h2 className="font-medium">{title}</h2>
-                <p className="text-[10px] text-foreground font-medium opacity-80 group-hover:text-white duration-200">{desc}</p>
+                <p className="text-[10px] text-foreground font-medium opacity-80 group-hover:text-white duration-200">
+                  {desc}
+                </p>
               </motion.li>
             );
           })}
