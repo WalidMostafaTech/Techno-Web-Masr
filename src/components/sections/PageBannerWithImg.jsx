@@ -30,11 +30,6 @@ const PageBannerWithImg = ({ block, loading }) => {
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
-  const phoneVariant = {
-    hidden: { opacity: 0, scale: 0.8, y: 50 },
-    show: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.7 } },
-  };
-
   return (
     <section
       className="bg-center bg-cover bg-primary w-full h-screen md:h-[500px] content-center pt-24 pb-16 md:mb-10"
