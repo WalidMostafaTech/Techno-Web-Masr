@@ -65,12 +65,12 @@ const PreviousWorkInfo = ({ data, loading }) => {
         className="w-full h-fit max-w-sm mx-auto lg:max-w-xs bg-white rounded-md shadow border p-4 flex flex-col text-center gap-2"
       >
         {data?.logo && (
-          <div className="h-28 w-full overflow-hidden mb-2 border border-transparent rounded-2xl hover:border-primary duration-300 py-2">
+          <div className="h-28 w-full overflow-hidden mb-2 border border-transparent rounded-2xl hover:border-primary duration-300 p-2">
             <img
               loading="lazy"
               src={data?.logo}
               alt="project"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain rounded-lg"
             />
           </div>
         )}

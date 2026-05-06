@@ -52,7 +52,7 @@ const PartnersSection = ({ block, loading }) => {
                   loading="lazy"
                   src={itemData.image_url}
                   alt="partner"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain rounded-lg"
                 />
               )}
             </motion.li>

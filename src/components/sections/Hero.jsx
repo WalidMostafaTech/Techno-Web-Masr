@@ -67,7 +67,6 @@ const Hero = ({ block, loading }) => {
               src={block.image_url}
               alt=""
               className="w-[70%] sm:w-[60%] md:w-[90%] h-full object-contain mx-auto"
-              whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.4 }}
             />
           </motion.div>

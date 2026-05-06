@@ -116,17 +116,13 @@ const ContactUS = () => {
           </motion.div>
 
           <div
-            className={`grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10 mt-6 ${
-              branches.length === 1 ? "place-items-center justify-items-center" : ""
-            }`}
+            className={`grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10 mt-6`}
           >
             {branches?.map((item) => (
               <motion.div
                 key={item.id}
                 onClick={() => navigate(`/${lang}/contact/${item.slug}`)}
-                className={`flex flex-col gap-4 bg-white p-3 border shadow rounded-lg font-medium cursor-pointer w-full ${
-                  branches.length === 1 ? "max-w-xl" : ""
-                }`}
+                className={`flex flex-col gap-4 bg-white p-3 border shadow rounded-lg font-medium cursor-pointer w-full`}
                 variants={cardVariants}
               >
                 <div

@@ -69,7 +69,7 @@ const PreviousWork = () => {
                 <motion.li
                   key={item.id}
                   variants={cardVariants}
-                  className="hover:-translate-y-2 transition-all duration-300 ease-out"
+                  className="hover:scale-102 transition-all duration-500 ease-out"
                   // whileHover={{ scale: 1.03 }}
                 >
                   <PreviousWorkCard item={item} />

@@ -57,7 +57,7 @@ const Partners = () => {
             <EmptyDataSection msg={t("Partners.noClients")} />
           ) : (
             <motion.ul
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 lg:gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-8"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -65,12 +65,12 @@ const Partners = () => {
               {PartnersData?.clients?.map((item) => (
                 <motion.li
                   key={item.id}
-                  className="bg-white shadow rounded-md border w-full aspect-video
-                    flex flex-col items-center text-center gap-2 p-4"
+                  className="bg-white shadow rounded-md border w-full
+                  flex flex-col items-center text-center gap-2 p-3"
                   variants={cardVariants}
                 >
                   <motion.div
-                    className="h-24 w-full overflow-hidden mb-2 border border-transparent rounded-2xl hover:border-primary duration-300"
+                    className="h-24 w-full overflow-hidden mb-2 p-2 border border-transparent rounded-2xl hover:border-primary duration-300"
                     variants={contentVariants}
                   >
                     {item.image_url && (
@@ -78,7 +78,7 @@ const Partners = () => {
                         loading="lazy"
                         src={item.image_url}
                         alt={item.title}
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-contain rounded-lg"
                       />
                     )}
                   </motion.div>

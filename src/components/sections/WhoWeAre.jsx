@@ -104,15 +104,19 @@ const WhoWeAre = ({ block, loading }) => {
             viewport={{ once: true }}
             variants={fadeUp}
           >
-            <h3 className="text-xl md:text-2xl font-semibold text-black">
-              {block.title}
-            </h3>
+            {block?.title && (
+              <h3 className="text-xl md:text-2xl font-semibold text-black">
+                {block.title}
+              </h3>
+            )}
 
-            <p className="text-foreground font-medium text-sm md:text-base lg:max-w-lg">
-              {block.description}
-            </p>
+            {block?.description && (
+              <p className="text-foreground font-medium text-sm md:text-base lg:max-w-lg">
+                {block.description}
+              </p>
+            )}
 
-            <ul className="grid grid-cols-2 gap-4 md:gap-8 ">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {block?.block_items?.map((item) => (
                 <li key={item.id} className="flex flex-col gap-2 text-primary">
                   {item.image_url && (

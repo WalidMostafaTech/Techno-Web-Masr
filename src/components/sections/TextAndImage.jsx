@@ -24,9 +24,9 @@ const TextAndImage = ({
 
   return (
     <section
-      className={`sectionPadding relative ${backgroundImage ? "bg-cover bg-center bg-no-repeat my-10" : ""}`}
+      className={`sectionPadding relative ${backgroundImage ? "bg-cover bg-center bg-no-repeat" : ""}`}
       style={{
-        background: backgroundImage && `url(${backgroundImage})`,
+        backgroundImage: backgroundImage && `url(${backgroundImage})`,
       }}
     >
       {yellowCircle && (
